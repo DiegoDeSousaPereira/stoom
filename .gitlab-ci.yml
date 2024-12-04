@@ -1,0 +1,27 @@
+stages:
+  - test
+
+cypress_tests:
+  image: cypress/base:18.16.0  # Use uma imagem Cypress pré-configurada com Node 18
+  stage: test
+  script:
+    - npm install
+    - npx cypress run
+  artifacts:
+    when: always
+    paths:
+      - cypress/reports/mochawesome/*.json
+      - cypress/reports/mochawesome/*.html
+      - cypress/videos/**
+      - cypress/screenshots/**
+    expire_in: 1 week
+  only:
+    - main
+    - merge_requests
+  after_script:
+    - |
+      if [ "$CI_JOB_STATUS" == "failed" ]; then
+        curl -X POST -H 'Content-type: application/json' \
+        --data '{"text":"⚠️ O job *cypress_tests* falhou no commit: '$CI_COMMIT_SHA' no projeto: '$CI_PROJECT_NAME'. Verifique os relatórios de teste em: '$CI_JOB_URL'"}' \
+        https://hooks.slack.com/services/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;
+      fi

@@ -1,0 +1,25 @@
+{
+    "messageLoginInvalid": "Epic sadface: Username and password do not match any user in this service",
+    "messageLoginValid": "Products",
+    "messageUsernameRequired": "Epic sadface: Username is required",
+    "messagePasswordRequired": "Epic sadface: Password is required",
+    "messageFirstNameRequired": "Error: First Name is required",
+    "messageLastNameRequired": "Error: Last Name is required",
+    "messageZipCodeRequired": "Error: Postal Code is required",
+
+    "messageProducts": "Products",
+    "cartValidation" : {
+      "description" : "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.",
+      "cart" : "Your Cart",
+      "QTY" : "QTY"
+    },
+    "checkoutValidation" : {
+      "checkoutInfo" : "Checkout: Your Information",
+      "checkoutOverview" : "Checkout: Overview",
+      "delivery" : "FREE PONY EXPRESS DELIVERY!",
+      "order" : "THANK YOU FOR YOUR ORDER"
+      
+    }
+    
+  }
+  
